@@ -14,9 +14,11 @@
 
 int main(void)
 {
-    Zombie  *z = NULL;
+    Zombie* Zombie;
 
-    z = z->newZombie("leM");
-    z->randomChump("leB");
-    delete z;
+    Zombie = newZombie("NZ");
+    Zombie->announce();
+    randomChump("RC");
+    delete Zombie;
+    return (0);
 }

@@ -12,10 +12,8 @@
 
 #include "Zombie.hpp"
 
-void    Zombie::randomChump(str name)
+void    randomChump(std::string name)
 {
     Zombie  Zombie(name);
-
     Zombie.announce();
-    return;
 }

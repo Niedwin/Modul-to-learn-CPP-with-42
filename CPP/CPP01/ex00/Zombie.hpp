@@ -15,16 +15,16 @@
 # include <iostream>
 # include <string>
 
-typedef std::string str;
-
 class Zombie {
     private:
-        str name;
-        void announce();
+        std::string _name;
     public:
-        Zombie(str name);
+        Zombie(std::string name);
         ~Zombie();
-         Zombie* newZombie(str name);
-	    void    randomChump(str name);
+        void    announce(void) const;
 };
+
+Zombie* newZombie(std::string name);
+void    randomChup(std::string name);
+
 #endif
