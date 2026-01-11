@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 17:53:09 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/29 17:53:09 by marvin           ###   ########.fr       */
+/*   Created: 2026/01/09 21:25:58 by marvin            #+#    #+#             */
+/*   Updated: 2026/01/09 21:25:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int main(void)
+# include "Weapon.hpp"
+# include <string>
+
+class HumanB
 {
-    Zombie* Zombie;
+    private:
+    std::string name;
+    Weapon& weapon;
+    public:
+    HumanB(std::string name);
+    void setWeapon(Weapon& weapon);
+    void attack() const;
+};
 
-    Zombie = newZombie("Heap");
-    Zombie->announce();
-    randomChump("Stack");
-    delete Zombie;
-    return (0);
-}
+#endif

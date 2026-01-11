@@ -12,8 +12,20 @@
 
 #include "Zombie.hpp"
 
+Zombie* zombieHorde(int N, std::string name);
+
 int main()
 {
-    Zombie  *horde
-    int     Zombiecount = 10;
+    int     N = 10;
+    int     i = 0;
+
+    Zombie* horde = zombieHorde(N, "HordeZombie");
+
+    while (i < N)
+    {
+        horde[i].announce();
+        i++;
+    }
+    delete[] horde;
+    return (0);
 }

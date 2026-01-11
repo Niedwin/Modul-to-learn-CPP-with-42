@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 17:53:09 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/29 17:53:09 by marvin           ###   ########.fr       */
+/*   Created: 2026/01/10 23:45:30 by marvin            #+#    #+#             */
+/*   Updated: 2026/01/10 23:45:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main(void)
+int main()
 {
-    Zombie* Zombie;
+    Harl harl;
 
-    Zombie = newZombie("Heap");
-    Zombie->announce();
-    randomChump("Stack");
-    delete Zombie;
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+
     return (0);
 }
