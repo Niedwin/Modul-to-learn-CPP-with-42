@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 22:42:26 by marvin            #+#    #+#             */
-/*   Updated: 2026/01/16 22:42:26 by marvin           ###   ########.fr       */
+/*   Created: 2026/01/16 22:41:55 by marvin            #+#    #+#             */
+/*   Updated: 2026/01/16 22:41:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
 
-# include <iostream>
-
-class Fixed
+int main(void)
 {
-    private:
-        int _entier;
-        static int _fract;
-    public:
-        Fixed();
-        Fixed(const Fixed& copy);
-        ~Fixed();
-        Fixed &operator=(const Fixed &src);
-        int getRawBits(void)const;
-        void setRawBits(int const raw);
-};
-#endif
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}

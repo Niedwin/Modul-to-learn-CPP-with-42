@@ -29,6 +29,18 @@ Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }
+Fixed::Fixed(int const n) 
+{
+	std::cout << "Int constructor called" << std::endl;
+	_entier = n << _fract;
+}
+
+Fixed::Fixed(float const n)
+{
+	std::cout << "Float constructor called" << std::endl;
+	_entier = (int)roundf(n * (1 << _fract));
+}
+
 Fixed &Fixed::operator=(const Fixed &src)
 {
 	std::cout << "Fixed Assignation operator called" << std::endl;
@@ -37,14 +49,31 @@ Fixed &Fixed::operator=(const Fixed &src)
 
 	return *this;
 }
-	int	Fixed::getRawBits(void)const
-	{
-		std::cout << "getRawBits member function called" << std::endl;
-		return (this->_entier);
-	}
+	
+int	Fixed::getRawBits(void)const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_entier);
+}
 
-	void	Fixed::setRawBits(int const raw)
-	{
-		std::cout << "setRawBits member function called" << std::endl;
-		this->_entier = raw;
-	}
+void	Fixed::setRawBits(int const raw)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	this->_entier = raw;
+}
+
+float	Fixed::toFloat(void) const 
+{
+	return (float)_entier / (float)(1 << _fract);
+}
+
+int	Fixed::toInt(void) const 
+{
+	return (int)(_entier >> _fract);
+}
+
+std::ostream&	operator<<(std::ostream &o, Fixed const &fixed) 
+{
+	o << fixed.toFloat();
+	return o;
+}
